@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html data-filename="pages/DownloadVersion" data-linenumber="8" data-visual-selector-id="pages/DownloadVersion8" lang="he" dir="rtl">
+<head data-filename="pages/DownloadVersion" data-linenumber="9" data-visual-selector-id="pages/DownloadVersion9">
+    <meta data-filename="pages/DownloadVersion" data-linenumber="10" data-visual-selector-id="pages/DownloadVersion10" charset="UTF-8">
+    <meta data-filename="pages/DownloadVersion" data-linenumber="11" data-visual-selector-id="pages/DownloadVersion11" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-filename="pages/DownloadVersion" data-linenumber="12" data-visual-selector-id="pages/DownloadVersion12">בודק אבטחה ופרטיות מתקדם</title>
+    <script data-filename="pages/DownloadVersion" data-linenumber="13" data-visual-selector-id="pages/DownloadVersion13" src="https://cdn.tailwindcss.com"></script>
+    <style data-filename="pages/DownloadVersion" data-linenumber="14" data-visual-selector-id="pages/DownloadVersion14">
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .animate-spin { animation: spin 1s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .gradient-bg { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        .card { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(20px); }
+        .progress-bar { transition: width 0.5s ease; }
+    </style>
+</head>
+<body data-filename="pages/DownloadVersion" data-linenumber="28" data-visual-selector-id="pages/DownloadVersion28" class="gradient-bg text-white">
+    <!-- Cookie Banner -->
+    <div data-filename="pages/DownloadVersion" data-linenumber="30" data-visual-selector-id="pages/DownloadVersion30" id="cookieBanner" class="hidden fixed bottom-0 left-0 right-0 z-50 p-4">
+        <div data-filename="pages/DownloadVersion" data-linenumber="31" data-visual-selector-id="pages/DownloadVersion31" class="max-w-4xl mx-auto bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 shadow-2xl">
+            <div data-filename="pages/DownloadVersion" data-linenumber="32" data-visual-selector-id="pages/DownloadVersion32" class="flex items-start gap-4">
+                <div data-filename="pages/DownloadVersion" data-linenumber="33" data-visual-selector-id="pages/DownloadVersion33" class="p-3 bg-cyan-500/20 rounded-xl">
+                    <svg data-filename="pages/DownloadVersion" data-linenumber="34" data-visual-selector-id="pages/DownloadVersion34" class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path data-filename="pages/DownloadVersion" data-linenumber="35" data-visual-selector-id="pages/DownloadVersion35" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                </div>
+                <div data-filename="pages/DownloadVersion" data-linenumber="38" data-visual-selector-id="pages/DownloadVersion38" class="flex-1">
+                    <h3 data-filename="pages/DownloadVersion" data-linenumber="39" data-visual-selector-id="pages/DownloadVersion39" class="text-lg font-bold text-white mb-2">הגנת פרטיות</h3>
+                    <p data-filename="pages/DownloadVersion" data-linenumber="40" data-visual-selector-id="pages/DownloadVersion40" class="text-slate-300 text-sm mb-4">אתר זה משתמש בקוקיז לצורך ניתוח ושיפור השירות. אנו מכבדים את פרטיותך.</p>
+                    <div data-filename="pages/DownloadVersion" data-linenumber="41" data-visual-selector-id="pages/DownloadVersion41" class="flex gap-3">
+                        <button data-filename="pages/DownloadVersion" data-linenumber="42" data-visual-selector-id="pages/DownloadVersion42" onclick="acceptCookies()" class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg">
+                            אשר הכל
+                        </button>
+                        <button data-filename="pages/DownloadVersion" data-linenumber="45" data-visual-selector-id="pages/DownloadVersion45" onclick="rejectCookies()" class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-lg">
+                            דחה הכל
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header data-filename="pages/DownloadVersion" data-linenumber="55" data-visual-selector-id="pages/DownloadVersion55" class="border-b border-slate-800/50 backdrop-blur-xl bg-slate-900/30">
+        <div data-filename="pages/DownloadVersion" data-linenumber="56" data-visual-selector-id="pages/DownloadVersion56" class="max-w-7xl mx-auto px-4 py-4">
+            <div data-filename="pages/DownloadVersion" data-linenumber="57" data-visual-selector-id="pages/DownloadVersion57" class="flex items-center justify-between">
+                <div data-filename="pages/DownloadVersion" data-linenumber="58" data-visual-selector-id="pages/DownloadVersion58" class="flex items-center gap-3">
+                    <div data-filename="pages/DownloadVersion" data-linenumber="59" data-visual-selector-id="pages/DownloadVersion59" class="p-2 bg-gradient-to-br from-cyan-500 to-indigo-600 rounded-xl">
+                        <svg data-filename="pages/DownloadVersion" data-linenumber="60" data-visual-selector-id="pages/DownloadVersion60" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path data-filename="pages/DownloadVersion" data-linenumber="61" data-visual-selector-id="pages/DownloadVersion61" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <div data-filename="pages/DownloadVersion" data-linenumber="64" data-visual-selector-id="pages/DownloadVersion64">
+                        <h1 data-filename="pages/DownloadVersion" data-linenumber="65" data-visual-selector-id="pages/DownloadVersion65" class="text-xl font-bold">בודק אבטחה ופרטיות מתקדם</h1>
+                        <p data-filename="pages/DownloadVersion" data-linenumber="66" data-visual-selector-id="pages/DownloadVersion66" class="text-xs text-slate-400">סריקה מלאה של מידע נחשף ודליפות</p>
+                    </div>
+                </div>
+                <button data-filename="pages/DownloadVersion" data-linenumber="69" data-visual-selector-id="pages/DownloadVersion69" onclick="runScan()" id="scanBtn" class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                    <svg data-filename="pages/DownloadVersion" data-linenumber="70" data-visual-selector-id="pages/DownloadVersion70" id="scanIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path data-filename="pages/DownloadVersion" data-linenumber="71" data-visual-selector-id="pages/DownloadVersion71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <span data-filename="pages/DownloadVersion" data-linenumber="73" data-visual-selector-id="pages/DownloadVersion73" id="scanText">סרוק</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main data-filename="pages/DownloadVersion" data-linenumber="80" data-visual-selector-id="pages/DownloadVersion80" class="max-w-7xl mx-auto px-4 py-8">
+        <div data-filename="pages/DownloadVersion" data-linenumber="81" data-visual-selector-id="pages/DownloadVersion81" id="lastScan" class="hidden flex items-center gap-2 text-sm text-slate-400 mb-6">
+            <svg data-filename="pages/DownloadVersion" data-linenumber="82" data-visual-selector-id="pages/DownloadVersion82" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path data-filename="pages/DownloadVersion" data-linenumber="83" data-visual-selector-id="pages/DownloadVersion83" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            סריקה אחרונה: <span data-filename="pages/DownloadVersion" data-linenumber="85" data-visual-selector-id="pages/DownloadVersion85" id="scanTime"></span>
+        </div>
+
+        <!-- Loading -->
+        <div data-filename="pages/DownloadVersion" data-linenumber="89" data-visual-selector-id="pages/DownloadVersion89" id="loading" class="space-y-6">
+            <div data-filename="pages/DownloadVersion" data-linenumber="90" data-visual-selector-id="pages/DownloadVersion90" class="h-40 bg-slate-800/50 rounded-xl animate-pulse"></div>
+            <div data-filename="pages/DownloadVersion" data-linenumber="91" data-visual-selector-id="pages/DownloadVersion91" class="grid gap-4 md:grid-cols-2">
+                <div data-filename="pages/DownloadVersion" data-linenumber="92" data-visual-selector-id="pages/DownloadVersion92" class="h-24 bg-slate-800/50 rounded-xl animate-pulse"></div>
+                <div data-filename="pages/DownloadVersion" data-linenumber="93" data-visual-selector-id="pages/DownloadVersion93" class="h-24 bg-slate-800/50 rounded-xl animate-pulse"></div>
+                <div data-filename="pages/DownloadVersion" data-linenumber="94" data-visual-selector-id="pages/DownloadVersion94" class="h-24 bg-slate-800/50 rounded-xl animate-pulse"></div>
+                <div data-filename="pages/DownloadVersion" data-linenumber="95" data-visual-selector-id="pages/DownloadVersion95" class="h-24 bg-slate-800/50 rounded-xl animate-pulse"></div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div data-filename="pages/DownloadVersion" data-linenumber="100" data-visual-selector-id="pages/DownloadVersion100" id="results" class="hidden space-y-8 fade-in">
+            <!-- Summary Card -->
+            <div data-filename="pages/DownloadVersion" data-linenumber="102" data-visual-selector-id="pages/DownloadVersion102" class="card border border-slate-700/50 rounded-xl p-6">
+                <h2 data-filename="pages/DownloadVersion" data-linenumber="103" data-visual-selector-id="pages/DownloadVersion103" class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <svg data-filename="pages/DownloadVersion" data-linenumber="104" data-visual-selector-id="pages/DownloadVersion104" class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path data-filename="pages/DownloadVersion" data-linenumber="105" data-visual-selector-id="pages/DownloadVersion105" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    סיכום הסריקה
+                </h2>
+                <div data-filename="pages/DownloadVersion" data-linenumber="109" data-visual-selector-id="pages/DownloadVersion109" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div data-filename="pages/DownloadVersion" data-linenumber="110" data-visual-selector-id="pages/DownloadVersion110" class="bg-slate-900/50 rounded-xl p-4 text-center">
+                        <div data-filename="pages/DownloadVersion" data-linenumber="111" data-visual-selector-id="pages/DownloadVersion111" class="text-3xl font-bold mb-1" id="totalChecks">0</div>
+                        <div data-filename="pages/DownloadVersion" data-linenumber="112" data-visual-selector-id="pages/DownloadVersion112" class="text-xs text-slate-400">סה״כ בדיקות</div>
+                    </div>
+                    <div data-filename="pages/DownloadVersion" data-linenumber="114" data-visual-selector-id="pages/DownloadVersion114" class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center">
+                        <div data-filename="pages/DownloadVersion" data-linenumber="115" data-visual-selector-id="pages/DownloadVersion115" class="text-3xl font-bold text-emerald-400 mb-1" id="safeChecks">0</div>
+                        <div data-filename="pages/DownloadVersion" data-linenumber="116" data-visual-selector-id="pages/DownloadVersion116" class="text-xs text-emerald-400/80">מאובטח</div>
+                    </div>
+                    <div data-filename="pages/DownloadVersion" data-linenumber="118" data-visual-selector-id="pages/DownloadVersion118" class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
+                        <div data-filename="pages/DownloadVersion" data-linenumber="119" data-visual-selector-id="pages/DownloadVersion119" class="text-3xl font-bold text-amber-400 mb-1" id="warningChecks">0</div>
+                        <div data-filename="pages/DownloadVersion" data-linenumber="120" data-visual-selector-id="pages/DownloadVersion120" class="text-xs text-amber-400/80">אזהרות</div>
+                    </div>
+                    <div data-filename="pages/DownloadVersion" data-linenumber="122" data-visual-selector-id="pages/DownloadVersion122" class="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center">
+                        <div data-filename="pages/DownloadVersion" data-linenumber="123" data-visual-selector-id="pages/DownloadVersion123" class="text-3xl font-bold text-red-400 mb-1" id="dangerChecks">0</div>
+                        <div data-filename="pages/DownloadVersion" data-linenumber="124" data-visual-selector-id="pages/DownloadVersion124" class="text-xs text-red-400/80">דליפות</div>
+                    </div>
+                </div>
+                <div data-filename="pages/DownloadVersion" data-linenumber="127" data-visual-selector-id="pages/DownloadVersion127" class="space-y-3">
+                    <div data-filename="pages/DownloadVersion" data-linenumber="128" data-visual-selector-id="pages/DownloadVersion128" class="flex items-center justify-between text-sm">
+                        <span data-filename="pages/DownloadVersion" data-linenumber="129" data-visual-selector-id="pages/DownloadVersion129" class="text-slate-400">מצב כללי</span>
+                        <span data-filename="pages/DownloadVersion" data-linenumber="130" data-visual-selector-id="pages/DownloadVersion130" class="font-semibold text-cyan-400" id="scoreText">0%</span>
+                    </div>
+                    <div data-filename="pages/DownloadVersion" data-linenumber="132" data-visual-selector-id="pages/DownloadVersion132" class="w-full bg-slate-700 rounded-full h-3">
+                        <div data-filename="pages/DownloadVersion" data-linenumber="133" data-visual-selector-id="pages/DownloadVersion133" id="progressBar" class="progress-bar bg-cyan-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p data-filename="pages/DownloadVersion" data-linenumber="135" data-visual-selector-id="pages/DownloadVersion135" class="text-sm text-cyan-400 text-center" id="statusText"></p>
+                </div>
+            </div>
+
+            <!-- Results Container -->
+            <div data-filename="pages/DownloadVersion" data-linenumber="140" data-visual-selector-id="pages/DownloadVersion140" id="checksContainer"></div>
+        </div>
+    </main>
+
+    <footer data-filename="pages/DownloadVersion" data-linenumber="144" data-visual-selector-id="pages/DownloadVersion144" class="border-t border-slate-800/50 mt-12">
+        <div data-filename="pages/DownloadVersion" data-linenumber="145" data-visual-selector-id="pages/DownloadVersion145" class="max-w-7xl mx-auto px-4 py-6 text-center">
+            <p data-filename="pages/DownloadVersion" data-linenumber="146" data-visual-selector-id="pages/DownloadVersion146" class="text-sm text-slate-500">כל הבדיקות מתבצעות באופן מקומי בדפדפן • אין מידע נשמר • קוד פתוח</p>
+        </div>
+    </footer>
+
+    <script data-filename="pages/DownloadVersion" data-linenumber="150" data-visual-selector-id="pages/DownloadVersion150">
+        let scanData = {};
+
+        // Cookie Functions
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', JSON.stringify({accepted: true, timestamp: new Date().toISOString()}));
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookie_consent', JSON.stringify({accepted: false, timestamp: new Date().toISOString()}));
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        // Check cookie consent on load
+        if (!localStorage.getItem('cookie_consent')) {
+            document.getElementById('cookieBanner').classList.remove('hidden');
+        }
+
+        // Scan Functions
+        async function runScan() {
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('scanBtn').disabled = true;
+            document.getElementById('scanIcon').classList.add('animate-spin');
+            document.getElementById('scanText').textContent = 'סורק...';
+
+            try {
+                const [ipData, webrtcData, fingerprints, deviceInfo] = await Promise.all([
+                    fetchIPData(),
+                    detectWebRTC(),
+                    getFingerprints(),
+                    getDeviceInfo()
+                ]);
+
+                scanData = {
+                    ip: ipData,
+                    webrtc: webrtcData,
+                    fingerprints: fingerprints,
+                    device: deviceInfo,
+                    browser: getBrowserInfo(),
+                    security: getSecurityInfo(),
+                    vpn: detectVPN(ipData)
+                };
+
+                displayResults();
+                
+                const now = new Date();
+                document.getElementById('scanTime').textContent = now.toLocaleTimeString('he-IL');
+                document.getElementById('lastScan').classList.remove('hidden');
+            } catch (error) {
+                console.error('Scan error:', error);
+            }
+
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('scanBtn').disabled = false;
+            document.getElementById('scanIcon').classList.remove('animate-spin');
+            document.getElementById('scanText').textContent = 'סרוק מחדש';
+        }
+
+        async function fetchIPData() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                return await response.json();
+            } catch (e) {
+                const response = await fetch('https://ip-api.com/json/');
+                const data = await response.json();
+                return {
+                    ip: data.query,
+                    city: data.city,
+                    country_name: data.country,
+                    org: data.isp,
+                    timezone: data.timezone,
+                    asn: data.as
+                };
+            }
+        }
+
+        function detectWebRTC() {
+            return new Promise((resolve) => {
+                const ips = { local: [], public: [] };
+                if (typeof RTCPeerConnection === 'undefined') {
+                    resolve({ supported: false, ips });
+                    return;
+                }
+                
+                const pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+                pc.createDataChannel('');
+                
+                pc.onicecandidate = (e) => {
+                    if (!e.candidate) {
+                        pc.close();
+                        resolve({ supported: true, ips, leaking: ips.local.length > 0 || ips.public.length > 0 });
+                        return;
+                    }
+                    
+                    const candidate = e.candidate.candidate;
+                    const ipMatch = candidate.match(/([0-9]{1,3}\.){3}[0-9]{1,3}/);
+                    
+                    if (ipMatch) {
+                        const ip = ipMatch[0];
+                        if (ip.startsWith('192.168.') || ip.startsWith('10.')) {
+                            if (!ips.local.includes(ip)) ips.local.push(ip);
+                        } else {
+                            if (!ips.public.includes(ip)) ips.public.push(ip);
+                        }
+                    }
+                };
+                
+                pc.createOffer().then(offer => pc.setLocalDescription(offer));
+                setTimeout(() => { pc.close(); resolve({ supported: true, ips, leaking: ips.local.length > 0 || ips.public.length > 0 }); }, 3000);
+            });
+        }
+
+        function getFingerprints() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.textBaseline = 'top';
+            ctx.font = '14px Arial';
+            ctx.fillStyle = '#f60';
+            ctx.fillRect(125, 1, 62, 20);
+            ctx.fillStyle = '#069';
+            ctx.fillText('Test', 2, 15);
+            
+            let hash = 0;
+            const dataUrl = canvas.toDataURL();
+            for (let i = 0; i < dataUrl.length; i++) {
+                hash = ((hash << 5) - hash) + dataUrl.charCodeAt(i);
+            }
+
+            return {
+                canvas: Math.abs(hash).toString(16).substring(0, 12),
+                webgl: getWebGL(),
+                fonts: detectFonts()
+            };
+        }
+
+        function getWebGL() {
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl');
+                if (!gl) return 'not-supported';
+                const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                if (debugInfo) {
+                    return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                }
+                return 'hidden';
+            } catch (e) {
+                return 'blocked';
+            }
+        }
+
+        function detectFonts() {
+            const fonts = ['Arial', 'Verdana', 'Times New Roman', 'Georgia', 'Courier New'];
+            return fonts.length;
+        }
+
+        function getDeviceInfo() {
+            return {
+                screen: window.screen.width + 'x' + window.screen.height,
+                cores: navigator.hardwareConcurrency || 'Unknown',
+                memory: navigator.deviceMemory ? navigator.deviceMemory + ' GB' : 'Unknown',
+                touch: navigator.maxTouchPoints || 0,
+                connection: navigator.connection ? navigator.connection.effectiveType : 'Unknown'
+            };
+        }
+
+        function getBrowserInfo() {
+            const ua = navigator.userAgent;
+            let browser = 'Unknown';
+            if (ua.includes('Firefox')) browser = 'Firefox';
+            else if (ua.includes('Chrome')) browser = 'Chrome';
+            else if (ua.includes('Safari')) browser = 'Safari';
+            
+            return {
+                name: browser,
+                language: navigator.language,
+                platform: navigator.platform
+            };
+        }
+
+        function getSecurityInfo() {
+            return {
+                cookies: navigator.cookieEnabled,
+                doNotTrack: navigator.doNotTrack === '1',
+                adBlocker: false // Simplified
+            };
+        }
+
+        function detectVPN(ipData) {
+            if (!ipData) return { detected: false };
+            const vpnKeywords = ['vpn', 'proxy', 'hosting', 'datacenter', 'cloud'];
+            const orgLower = (ipData.org || '').toLowerCase();
+            const detected = vpnKeywords.some(k => orgLower.includes(k));
+            return { detected };
+        }
+
+        function displayResults() {
+            const checks = [
+                { title: 'כתובת IP', value: scanData.ip?.ip || 'Unknown', status: 'danger' },
+                { title: 'VPN', value: scanData.vpn.detected ? 'זוהה' : 'לא זוהה', status: scanData.vpn.detected ? 'safe' : 'warning' },
+                { title: 'דליפת WebRTC', value: scanData.webrtc.leaking ? 'דולף' : 'מאובטח', status: scanData.webrtc.leaking ? 'danger' : 'safe' },
+                { title: 'מיקום', value: scanData.ip?.city + ', ' + scanData.ip?.country_name, status: 'warning' },
+                { title: 'ספק אינטרנט', value: scanData.ip?.org || 'Unknown', status: 'info' },
+                { title: 'דפדפן', value: scanData.browser.name, status: 'info' },
+                { title: 'רזולוציה', value: scanData.device.screen, status: 'info' },
+                { title: 'ליבות CPU', value: scanData.device.cores, status: 'info' },
+                { title: 'זיכרון', value: scanData.device.memory, status: 'info' },
+                { title: 'Canvas FP', value: scanData.fingerprints.canvas, status: 'warning' },
+                { title: 'WebGL', value: scanData.fingerprints.webgl, status: 'warning' },
+                { title: 'קוקיז', value: scanData.security.cookies ? 'מופעל' : 'כבוי', status: 'info' }
+            ];
+
+            let safe = 0, warning = 0, danger = 0;
+            checks.forEach(c => {
+                if (c.status === 'safe') safe++;
+                else if (c.status === 'warning') warning++;
+                else if (c.status === 'danger') danger++;
+            });
+
+            document.getElementById('totalChecks').textContent = checks.length;
+            document.getElementById('safeChecks').textContent = safe;
+            document.getElementById('warningChecks').textContent = warning;
+            document.getElementById('dangerChecks').textContent = danger;
+
+            const score = Math.round((safe / checks.length) * 100);
+            document.getElementById('scoreText').textContent = score + '%';
+            document.getElementById('progressBar').style.width = score + '%';
+            
+            let statusText = 'מצוין';
+            if (danger >= 3) statusText = 'חלש - יש דליפות';
+            else if (danger >= 1) statusText = 'בינוני';
+            else if (warning >= 2) statusText = 'טוב';
+            document.getElementById('statusText').textContent = statusText;
+
+            const container = document.getElementById('checksContainer');
+            container.innerHTML = '';
+            
+            checks.forEach(check => {
+                const colors = {
+                    safe: 'border-emerald-500/30 bg-emerald-500/10',
+                    warning: 'border-amber-500/30 bg-amber-500/10',
+                    danger: 'border-red-500/30 bg-red-500/10',
+                    info: 'border-cyan-500/30 bg-cyan-500/10'
+                };
+                
+                const badge = {
+                    safe: '<span data-filename="pages/DownloadVersion" data-linenumber="398" data-visual-selector-id="pages/DownloadVersion398" class="text-emerald-400">✓ מאובטח</span>',
+                    warning: '<span data-filename="pages/DownloadVersion" data-linenumber="399" data-visual-selector-id="pages/DownloadVersion399" class="text-amber-400">⚠ אזהרה</span>',
+                    danger: '<span data-filename="pages/DownloadVersion" data-linenumber="400" data-visual-selector-id="pages/DownloadVersion400" class="text-red-400">✗ נחשף</span>',
+                    info: '<span data-filename="pages/DownloadVersion" data-linenumber="401" data-visual-selector-id="pages/DownloadVersion401" class="text-cyan-400">ℹ מידע</span>'
+                };
+
+                container.innerHTML += `
+                    <div data-filename="pages/DownloadVersion" data-linenumber="405" data-visual-selector-id="pages/DownloadVersion405" class="card border ${colors[check.status]} rounded-xl p-4 mb-4">
+                        <div data-filename="pages/DownloadVersion" data-linenumber="406" data-visual-selector-id="pages/DownloadVersion406" class="flex justify-between items-center">
+                            <div data-filename="pages/DownloadVersion" data-linenumber="407" data-visual-selector-id="pages/DownloadVersion407">
+                                <h3 data-filename="pages/DownloadVersion" data-linenumber="408" data-visual-selector-id="pages/DownloadVersion408" class="font-medium text-white">${check.title}</h3>
+                                <code data-filename="pages/DownloadVersion" data-linenumber="409" data-visual-selector-id="pages/DownloadVersion409" class="text-sm text-slate-300 bg-slate-800/50 px-2 py-1 rounded mt-1 inline-block">${check.value}</code>
+                            </div>
+                            <div data-filename="pages/DownloadVersion" data-linenumber="411" data-visual-selector-id="pages/DownloadVersion411" class="text-sm">${badge[check.status]}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Run scan on page load
+        window.onload = () => {
+            setTimeout(runScan, 500);
+        };
+    </script>
+</body>
+</html>
